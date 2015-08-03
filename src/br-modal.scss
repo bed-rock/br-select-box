@@ -1,0 +1,63 @@
+:host {
+  user-select: none;
+  display: none;
+
+  &.open {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1rem;
+    background: rgba(#000,0.7);
+    box-sizing: border-box;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px - (2rem * 1);
+  max-width: $screen-phone;
+  max-height: 100%;
+  overflow: hidden;
+  background: #F5F5F5;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 20px 2px;
+  box-sizing: border-box;
+
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    height: 2rem;
+    align-items: stretch;
+    border-bottom: 1px solid $color-gray;
+
+    button {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0 0.5rem;
+      appearance: none;
+      background: none;
+      border: none;
+      line-height: 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: $controls-color;
+      cursor: pointer;
+      transition: $transition;
+      box-sizing: border-box;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $controls-hover-color;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,33 @@
+<link rel="import" type="html" href="../../polymer/polymer.html">
+<link rel="import" type="html" href="../../br-icons/br-icons.html">
+
+<dom-module id="br-modal">
+
+  <template>
+
+    <header>
+      <div class="controls">
+        <button on-click="_closeSelect">
+          <br-icons icon="check"></br-icons>
+        </button>
+      </div>
+    </header>
+
+    <div class="content">
+      <content></content>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'br-modal',
+
+      _closeSelect: function(){
+        Polymer.dom(this).classList.remove('open');
+      }
+
+    });
+  </script>
+
+</dom-module>
