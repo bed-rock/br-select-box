@@ -2,28 +2,42 @@
 @import 'variables';
 
 :host {
-  user-select: none;
   display: none;
+  position: relative;
+  user-select: none;
+  box-sizing: border-box;
 
   &.open {
     display: flex;
-    justify-content: center;
     align-items: flex-start;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1rem;
-    background: rgba(#000,0.7);
-    box-sizing: border-box;
+
+    @media(max-width: $screen-tablet) {
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      padding: 1rem;
+      background: rgba(#000,0.7);
+    }
+
+    @media(min-width: $screen-desktop) {
+      position: absolute;
+      justify-content: flex-start;
+    }
+
+    &.right {
+      justify-content: flex-end;
+    }
+
   }
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  // min-width: 320px - (2rem * 1);
+  min-width: 300px;
   max-width: $screen-phone;
   max-height: 100%;
   overflow: hidden;
@@ -36,30 +50,12 @@
   display: flex;
   justify-content: flex-end;
   flex-shrink: 0;
-  height: 2rem;
+  height: $input-height;
+  line-height: $input-height;
   align-items: stretch;
   border-bottom: 1px solid $color-white-20;
 
   button {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0 0.5rem;
-    appearance: none;
-    background: none;
-    border: none;
-    line-height: 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: $controls-color;
-    cursor: pointer;
-    transition: $transition;
-    box-sizing: border-box;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: $controls-hover-color;
-    }
+    padding: 0 1rem;
   }
 }

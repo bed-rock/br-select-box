@@ -10,8 +10,8 @@
     <div class="content">
 
       <div class="controls">
-        <button on-click="_closeSelect">
-          <br-icons icon="check"></br-icons>
+        <button on-click="_close">
+          <br-icons icon="br-icons:check"></br-icons>
         </button>
       </div>
 
@@ -24,7 +24,10 @@
     Polymer({
       is: 'br-select-box',
 
-      _closeSelect: function(){
+      _open: function(){
+        Polymer.dom(this).classList.remove('open');
+      },
+      _close: function(){
         Polymer.dom(this).classList.remove('open');
       }
 
