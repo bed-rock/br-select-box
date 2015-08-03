@@ -1,19 +1,20 @@
 <link rel="import" type="html" href="../../polymer/polymer.html">
-<link rel="import" type="html" href="../../br-icons/br-icons.html">
+<link rel="import" type="html" href="../../br-icons/src/br-icons.html">
 
-<dom-module id="br-modal">
+<dom-module id="br-select-box">
+
+  <link rel="import" type="css" href="../dist/css/br-select-box.css">
 
   <template>
 
-    <header>
+    <div class="content">
+
       <div class="controls">
         <button on-click="_closeSelect">
           <br-icons icon="check"></br-icons>
         </button>
       </div>
-    </header>
 
-    <div class="content">
       <content></content>
     </div>
 
@@ -21,7 +22,7 @@
 
   <script>
     Polymer({
-      is: 'br-modal',
+      is: 'br-select-box',
 
       _closeSelect: function(){
         Polymer.dom(this).classList.remove('open');
