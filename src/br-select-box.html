@@ -11,7 +11,9 @@
 
       <div class="controls">
         <button on-click="_close">
-          <br-icons icon="br-icons:check"></br-icons>
+          <template id="dom-if" if="{{checkButton}}">
+            <br-icons icon="br-icons:check"></br-icons>
+          </template>
         </button>
       </div>
 
@@ -23,6 +25,15 @@
   <script>
     Polymer({
       is: 'br-select-box',
+
+      properties: {
+
+        checkButton: {
+          type: Boolean,
+          default: false
+        }
+
+      },
 
       _open: function(){
         Polymer.dom(this).classList.remove('open');
