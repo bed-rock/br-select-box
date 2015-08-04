@@ -9,13 +9,13 @@
 
     <div class="content">
 
-      <div class="controls">
-        <button on-click="_close">
-          <template id="dom-if" if="{{checkButton}}">
-            <br-icons icon="br-icons:check"></br-icons>
-          </template>
-        </button>
-      </div>
+      <template id="dom-if" if="{{checkButton}}">
+        <div class="controls">
+          <button on-click="_close">
+              <br-icons icon="br-icons:check"></br-icons>
+          </button>
+        </div>
+      </template>
 
       <content></content>
     </div>
