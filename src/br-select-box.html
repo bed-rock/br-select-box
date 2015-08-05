@@ -38,22 +38,13 @@
       ready: function(){
 
         var html = document.querySelector('html');
-        html.addEventListener('click', function() {           
-          document.querySelector('br-select-box').classList.remove('open');          
-          console.log('1');
-        }, false);        
-
-     
-        // var apps = Polymer.dom(this.dataHost).querySelector('br-apps-navigation');
-        // console.log();
-        // apps.addEventListener('click', function(event) { 
-        //   event.stopPropagation();          
-        // }, false);
+        html.addEventListener('click', function() {
+          document.querySelector('br-select-box').classList.remove('open');
+        }, false);
 
         var content = Polymer.dom(this.root).querySelector('.content');
-        content.addEventListener('click', function(event) { 
+        content.addEventListener('click', function(event) {
           event.stopPropagation();
-          console.log('2');
         }, false);
 
       },
