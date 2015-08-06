@@ -9,7 +9,7 @@
 
   &.open {
     display: flex;
-    z-index: 1000;
+    z-index: 10;
 
     @media(max-width: $screen-tablet) {
       align-items: flex-start;
@@ -25,9 +25,11 @@
 
     @media(min-width: $screen-tablet + 1) {
       position: absolute;
+      top: 100%;
+      left: 0;
 
       &.right {
-        top: 100%;
+        left: auto;
         right: 0;
       }
     }
