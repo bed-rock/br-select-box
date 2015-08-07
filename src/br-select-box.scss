@@ -1,0 +1,65 @@
+@import '../../bedrock/scss/variables';
+@import 'variables';
+
+:host {
+  display: none;
+  position: relative;
+  user-select: none;
+  box-sizing: border-box;
+
+  &.open {
+    display: flex;
+    z-index: 10;
+
+    @media(max-width: $screen-tablet) {
+      align-items: flex-start;
+      justify-content: center;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      padding: 3.5rem 1rem;
+      background: rgba(#000,0.7);
+    }
+
+    @media(min-width: $screen-tablet + 1) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      &.right {
+        left: auto;
+        right: 0;
+      }
+    }
+
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-width: 288px;
+  // max-width: $screen-phone;
+  max-width: 288px;
+  max-height: 100%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 20px 2px;
+  box-sizing: border-box;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  height: $input-height;
+  line-height: $input-height;
+  align-items: stretch;
+  border-bottom: 1px solid $color-white-20;
+
+  button {
+    padding: 0 1rem;
+  }
+}
