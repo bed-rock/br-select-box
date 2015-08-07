@@ -37,9 +37,11 @@
 
       ready: function(){
 
-        var html = document.querySelector('html');
-        html.addEventListener('click', function() {
-          document.querySelector('br-select-box').classList.remove('open');
+        var selectBox = Polymer.dom(this);
+
+        document.addEventListener('click', function() {
+          if (selectBox.classList.contains('open') && selectBox.classList !== null)
+            selectBox.classList.remove('open');
         }, false);
 
         var content = Polymer.dom(this.root).querySelector('.content');
