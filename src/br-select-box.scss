@@ -1,4 +1,5 @@
 @import '../../bedrock/scss/variables';
+@import '../../br-header/src/variables';
 @import 'variables';
 
 :host {
@@ -19,7 +20,7 @@
       right: 0;
       top: 0;
       bottom: 0;
-      padding: 3.5rem 1rem;
+      // padding: 3.5rem 1rem;
       background: rgba(#000,0.7);
     }
 
@@ -40,22 +41,24 @@
 .content {
   display: flex;
   flex-direction: column;
-  min-width: 288px;
-  // max-width: $screen-phone;
-  max-width: 288px;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.3) 0 0 20px 2px;
   box-sizing: border-box;
+
+  @media(min-width: $screen-desktop) {
+    max-width: 288px;
+  }
 }
 
 .controls {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-shrink: 0;
-  height: $input-height;
-  line-height: $input-height;
+  height: $header-height;
+  line-height: $header-height;
   align-items: stretch;
   border-bottom: 1px solid $color-white-20;
 
