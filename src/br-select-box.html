@@ -1,4 +1,5 @@
 <link rel="import" type="html" href="../../polymer/polymer.html">
+<link rel="import" type="html" href="../../br-header/src/br-header.html">
 <link rel="import" type="html" href="../../br-icons/src/br-icons.html">
 
 <dom-module id="br-select-box">
@@ -9,16 +10,20 @@
 
     <div class="content">
 
-      <div class="controls">
-        <button on-click="_close">
-          <br-icons icon="br-icons:close"></br-icons>
-        </button>
-        <template id="dom-if" if="{{checkButton}}">
-          <button on-click="_close">
-            <br-icons icon="br-icons:check"></br-icons>
+      <br-header class="controls">
+        <div class="group__left">
+          <button class="btn" on-click="_close">
+            <br-icons icon="br-icons:arrow-back"></br-icons>
           </button>
-        </template>
-      </div>
+        </div>
+        <div class="group__right">
+          <template id="dom-if" if="{{checkButton}}">
+            <button class="btn" on-click="_close">
+              <br-icons icon="br-icons:check"></br-icons>
+            </button>
+          </template>
+        </div>
+      </br-header>
 
       <content></content>
     </div>
